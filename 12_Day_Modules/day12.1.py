@@ -9,3 +9,15 @@ print(full_name)
 
 user_id = generate_random_user_id()
 print(user_id)
+
+import os
+
+
+os.mkdir('test_folder')
+print(os.getcwd())
+
+os.chdir('test_folder')
+print(os.getcwd())
+
+os.chdir('..')
+os.rmdir('test_folder')
