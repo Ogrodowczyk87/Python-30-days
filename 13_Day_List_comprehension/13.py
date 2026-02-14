@@ -67,11 +67,12 @@
     
 # print(flat_list(list_of_lists))
 
-countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+# countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
 
-result = [
-    {'country': country.upper(), 'city': city.upper()}
-    for [(country, city)] in countries
-]
+# result = [
+#     {'country': country.upper(), 'city': city.upper()}
+#     for [(country, city)] in countries
+# ]
 
-print(result)
+# print(result)
+
