@@ -54,40 +54,72 @@
     
 # say_hello()
 
-def upper_case_decorator(function):
-    def wrapper():
-        func = function()
-        make_uppercase = func.upper()
-        return make_uppercase
-    return wrapper
+# def upper_case_decorator(function):
+#     def wrapper():
+#         func = function()
+#         make_uppercase = func.upper()
+#         return make_uppercase
+#     return wrapper
 
-def split_string_decorator(function):
-    def wrapper():
-        func = function()
-        split_string = func.split()
-        return split_string
-    return wrapper
-
-
-
-@split_string_decorator
-@upper_case_decorator
-
-def greeting():
-    return "Hello, World!"
-print(greeting())
+# def split_string_decorator(function):
+#     def wrapper():
+#         func = function()
+#         split_string = func.split()
+#         return split_string
+#     return wrapper
 
 
-def my_decorator(func):
-    def wrapper(*args, **kwargs):
-        print("Przed funkcją")
-        result = func(*args, **kwargs)
-        print("Po funkcji")
+
+# @split_string_decorator
+# @upper_case_decorator
+
+# def greeting():
+#     return "Hello, World!"
+# print(greeting())
+
+
+# def my_decorator(func):
+#     def wrapper(*args, **kwargs):
+#         print("Przed funkcją")
+#         result = func(*args, **kwargs)
+#         print("Po funkcji")
+#         return result
+#     return wrapper
+
+# @my_decorator
+# def say_hello():
+#     print("Hello!")
+
+# say_hello()
+
+
+# @my_decorator
+# def say_hello_to(name):
+#     print(f"Hello, {name}!")
+
+# say_hello_to("Rafal")
+
+
+# @my_decorator
+# def user_info(**kwargs):
+#     print(f"Przekazane kwargs: {kwargs}")
+#     if "name" in kwargs:
+#         print(f"Czesc, {kwargs['name']}!")
+
+# user_info(name="Rafal", age=30, city="Krakow")
+
+def decorator_with_parameters(function):
+    def wrapper_accepting_parameters(para1, para2, para3):
+        result = function(para1, para2, para3)
+        print("I live in {}".format(para3))
         return result
-    return wrapper
+    return wrapper_accepting_parameters
 
-@my_decorator
-def say_hello():
-    print("Hello!")
 
-say_hello()
+@decorator_with_parameters
+def print_full_name(first_name, last_name, country):
+    print("I am {} {}, I love to teach.".format(first_name,
+        last_name))
+
+
+print_full_name("Rafa", "Kowalski", "Poland")
